@@ -57,7 +57,7 @@ public class KryoAltStrategy extends Kryo implements Rome, SpringPartiallyCompar
     @Override
     protected com.esotericsoftware.kryo.Kryo makeKryo () {
         com.esotericsoftware.kryo.Kryo k = super.makeKryo();
-        k.setInstantiatorStrategy(new com.esotericsoftware.kryo.Kryo.DefaultInstantiatorStrategy(new StdInstantiatorStrategy()));
+        k.setInstantiatorStrategy(new com.esotericsoftware.kryo.util.DefaultInstantiatorStrategy(new StdInstantiatorStrategy()));
         return k;
     }
 

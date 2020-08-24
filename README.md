@@ -1,5 +1,23 @@
 # Java Unmarshaller Security - Turning your data into code execution
 
+# How to deploy new Gresham artefact
+This project was forked from https://github.com/mbechler/marshalsec . It is used only as a test dependency to test kryo related vulnerabilities in CTC.
+To deploy a new artefact use 
+```shell
+mvn deploy -DskipTests
+```
+
+# 1.0.0.RELEASE
+Changes:
+- Upgraded kryo version to 5.0.0-RC7
+- Upgraded groovy version to 2.4.13
+- Fixed compilation issues
+- Set setRegistrationRequired flag to false for kryo
+
+Known issues:
+- ServiceLoader gadget is not working anymore
+- Tests did not run because they require an RMI/LDAP server (see Running tests section)
+
 ## Paper
 
 It's been more than two years since Chris Frohoff and Garbriel Lawrence have presented their research into Java object deserialization vulnerabilities ultimately resulting in what can be readily described as the biggest wave of remote code execution bugs in Java history.

@@ -73,7 +73,9 @@ public class Kryo extends MarshallerBase<byte[]> implements SpringAbstractBeanFa
 
 
     protected com.esotericsoftware.kryo.Kryo makeKryo () {
-        return new com.esotericsoftware.kryo.Kryo();
+        com.esotericsoftware.kryo.Kryo kryo = new com.esotericsoftware.kryo.Kryo();
+        kryo.setRegistrationRequired(false);
+        return kryo;
     }
 
 
